@@ -35,7 +35,7 @@ def ofNat : Nat → Peano
   | succ k ih => simp [toNat, ofNat, ih]
 
 instance : Repr Peano where
-  reprPrec
+  reprPrec := fun
     | zero, _   => "zero"
     | succ n, _ => "succ (" ++ reprPrec n 0 ++ ")"
 
